@@ -144,9 +144,9 @@ extern "C" {
 #define __STM32F4XX_STDPERIPH_VERSION_SUB2   (0x00) /*!< [15:8]  sub2 version */
 #define __STM32F4XX_STDPERIPH_VERSION_RC     (0x00) /*!< [7:0]  release candidate */
 #define __STM32F4XX_STDPERIPH_VERSION        ((__STM32F4XX_STDPERIPH_VERSION_MAIN << 24)\
-                                             |(__STM32F4XX_STDPERIPH_VERSION_SUB1 << 16)\
-                                             |(__STM32F4XX_STDPERIPH_VERSION_SUB2 << 8)\
-                                             |(__STM32F4XX_STDPERIPH_VERSION_RC))
+        |(__STM32F4XX_STDPERIPH_VERSION_SUB1 << 16)\
+        |(__STM32F4XX_STDPERIPH_VERSION_SUB2 << 8)\
+        |(__STM32F4XX_STDPERIPH_VERSION_RC))
 
 /**
   * @}
@@ -201,7 +201,7 @@ typedef enum IRQn
     DMA1_Stream6_IRQn           = 17,     /*!< DMA1 Stream 6 global Interrupt                                    */
     ADC_IRQn                    = 18,     /*!< ADC1, ADC2 and ADC3 global Interrupts                             */
 
-#if defined (STM32F40_41xxx)
+    #if defined (STM32F40_41xxx)
     CAN1_TX_IRQn                = 19,     /*!< CAN1 TX Interrupt                                                 */
     CAN1_RX0_IRQn               = 20,     /*!< CAN1 RX0 Interrupt                                                */
     CAN1_RX1_IRQn               = 21,     /*!< CAN1 RX1 Interrupt                                                */
@@ -265,9 +265,9 @@ typedef enum IRQn
     CRYP_IRQn                   = 79,     /*!< CRYP crypto global interrupt                                      */
     HASH_RNG_IRQn               = 80,     /*!< Hash and Rng global interrupt                                     */
     FPU_IRQn                    = 81      /*!< FPU global interrupt                                              */
-#endif /* STM32F40_41xxx */
+    #endif /* STM32F40_41xxx */
 
-#if defined (STM32F427_437xx)
+                                  #if defined (STM32F427_437xx)
                                   CAN1_TX_IRQn                = 19,     /*!< CAN1 TX Interrupt                                                 */
                                   CAN1_RX0_IRQn               = 20,     /*!< CAN1 RX0 Interrupt                                                */
                                   CAN1_RX1_IRQn               = 21,     /*!< CAN1 RX1 Interrupt                                                */
@@ -338,9 +338,9 @@ typedef enum IRQn
                                   SPI6_IRQn                   = 86,     /*!< SPI6 global Interrupt                                             */
                                   SAI1_IRQn                   = 87,     /*!< SAI1 global Interrupt                                             */
                                   DMA2D_IRQn                  = 90      /*!< DMA2D global Interrupt                                            */
-#endif /* STM32F427_437xx */
+                                  #endif /* STM32F427_437xx */
 
-#if defined (STM32F429_439xx)
+                                          #if defined (STM32F429_439xx)
                                           CAN1_TX_IRQn                = 19,     /*!< CAN1 TX Interrupt                                                 */
                                           CAN1_RX0_IRQn               = 20,     /*!< CAN1 RX0 Interrupt                                                */
                                           CAN1_RX1_IRQn               = 21,     /*!< CAN1 RX1 Interrupt                                                */
@@ -413,9 +413,9 @@ typedef enum IRQn
                                           LTDC_IRQn                   = 88,     /*!< LTDC global Interrupt                                             */
                                           LTDC_ER_IRQn                = 89,     /*!< LTDC Error global Interrupt                                       */
                                           DMA2D_IRQn                  = 90      /*!< DMA2D global Interrupt                                            */
-#endif /* STM32F429_439xx */
+                                          #endif /* STM32F429_439xx */
 
-#if defined (STM32F401xx) || defined (STM32F411xE)
+                                                  #if defined (STM32F401xx) || defined (STM32F411xE)
                                                   EXTI9_5_IRQn                = 23,     /*!< External Line[9:5] Interrupts                                     */
                                                   TIM1_BRK_TIM9_IRQn          = 24,     /*!< TIM1 Break interrupt and TIM9 global interrupt                    */
                                                   TIM1_UP_TIM10_IRQn          = 25,     /*!< TIM1 Update Interrupt and TIM10 global interrupt                  */
@@ -452,14 +452,14 @@ typedef enum IRQn
                                                   I2C3_EV_IRQn                = 72,     /*!< I2C3 event interrupt                                              */
                                                   I2C3_ER_IRQn                = 73,     /*!< I2C3 error interrupt                                              */
                                                   FPU_IRQn                    = 81,      /*!< FPU global interrupt                                             */
-#if defined (STM32F401xx)
+                                                  #if defined (STM32F401xx)
                                                   SPI4_IRQn                   = 84       /*!< SPI4 global Interrupt                                            */
-#endif /* STM32F411xE */
-#if defined (STM32F411xE)
+                                                  #endif /* STM32F411xE */
+                                                          #if defined (STM32F411xE)
                                                           SPI4_IRQn                   = 84,     /*!< SPI4 global Interrupt                                             */
                                                           SPI5_IRQn                   = 85      /*!< SPI5 global Interrupt                                             */
-#endif /* STM32F411xE */
-#endif /* STM32F401xx || STM32F411xE */
+                                                          #endif /* STM32F411xE */
+                                                  #endif /* STM32F401xx || STM32F411xE */
 
 } IRQn_Type;
 
