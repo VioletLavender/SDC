@@ -1,19 +1,53 @@
+/**
+  ******************************************************************************
+  * @file    BSP.h
+  * @author  
+  * @version V1.00
+  * @date    22-Sep-2020
+  * @brief   ......
+  ******************************************************************************
+  * @attention
+  *
+  * ......
+  *
+  ******************************************************************************
+  */
+
+
+/* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __SDCARD_H
 #define __SDCARD_H
 
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
+#undef EXTERN
+
+
+#ifdef  __SDCARD_C__
+#define EXTERN
+#else
+#define EXTERN extern
+#endif
+
+
+/* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx.h"
 #include "sys.h"
 #include "delay.h"
 
+
+/* Exported constants --------------------------------------------------------*/
+/* Exported types ------------------------------------------------------------*/
+/* Exported macro ------------------------------------------------------------*/
+
+
+/* Exported functions --------------------------------------------------------*/
 #define DUMMY_BYTE      0xFF
 
-
-
-/**
-  * @brief  Start Data tokens:
-  *         Tokens (necessary because at nop/idle (and CS active) only 0xff is
-  *         on the data/command line)
-  */
 #define SD_START_DATA_SINGLE_BLOCK_READ    0xFE  /*!< Data token start byte, Start Single Block Read */
 #define SD_START_DATA_MULTIPLE_BLOCK_READ  0xFE  /*!< Data token start byte, Start Multiple Block Read */
 #define SD_START_DATA_SINGLE_BLOCK_WRITE   0xFE  /*!< Data token start byte, Start Single Block Write */
@@ -206,11 +240,18 @@ SD_Error SD_GetResponse(uint8_t Response);
 uint8_t SD_GetDataResponse(void);
 SD_Error SD_GoIdleState(void);
 uint16_t SD_GetStatus(void);
-
+void SD_Card_Init(void);
 
 uint8_t SD_GetResp(void);
 
 
+#ifdef __cplusplus
+}
 #endif
 
+
+#endif
+
+
+/******************* (C) COPYRIGHT 2020 *************************END OF FILE***/
 

@@ -1,6 +1,6 @@
 /**
   ******************************************************************************
-  * @file    BSP.h
+  * @file    main.h
   * @author  
   * @version V1.00
   * @date    22-Sep-2020
@@ -15,8 +15,8 @@
 
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __TEST_H
-#define __TEST_H
+#ifndef __MAIN_H__
+#define __MAIN_H__
 
 
 #ifdef __cplusplus
@@ -27,7 +27,7 @@ extern "C" {
 #undef EXTERN
 
 
-#ifdef  __TEST_C__
+#ifdef  __MAIN_C__
 #define EXTERN
 #else
 #define EXTERN extern
@@ -35,19 +35,13 @@ extern "C" {
 
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f4xx.h"
+#include "config.h"
 
 
 /* Exported constants --------------------------------------------------------*/
 /* Exported types ------------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
-
-
 /* Exported functions --------------------------------------------------------*/
-EXTERN void SD_Card_Test(void);
-EXTERN void SD_Card_Readbin(void);
-EXTERN void  SD_F_mount(void);
-EXTERN void SD_Test_Entry(void);
 
 
 #ifdef __cplusplus
@@ -56,4 +50,7 @@ EXTERN void SD_Test_Entry(void);
 
 
 #endif
+
+
+/******************* (C) COPYRIGHT 2020 *************************END OF FILE***/
 

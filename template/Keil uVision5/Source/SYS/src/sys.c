@@ -1,25 +1,79 @@
+/**
+  ******************************************************************************
+  * @file    main.c
+  * @author  
+  * @version V1.00
+  * @date    22-Sep-2020
+  * @brief   ......
+  ******************************************************************************
+  * @attention
+  *
+  * ......
+  *
+  ******************************************************************************
+  */
+
+
+/* Define to prevent recursive inclusion -------------------------------------*/
+#define __SYS_C__
+
+
+/* Includes ------------------------------------------------------------------*/
 #include "sys.h"
 
-//THUMB指令不支持汇编内联
-//采用如下方法实现执行汇编指令WFI
+
+/* Private typedef -----------------------------------------------------------*/
+/* Private define ------------------------------------------------------------*/
+/* Private macro -------------------------------------------------------------*/
+/* Private variables ---------------------------------------------------------*/
+/* Private function prototypes -----------------------------------------------*/
+/* Private functions ---------------------------------------------------------*/
+
+
+/* Exported variables --------------------------------------------------------*/
+/* Exported function prototypes ----------------------------------------------*/
+
+
+/**
+  * @brief  
+  * @param  None
+  * @retval None
+  */
 __asm void WFI_SET(void)
 {
     WFI;
 }
-//关闭所有中断(但是不包括fault和NMI中断)
+
+
+/**
+  * @brief  
+  * @param  None
+  * @retval None
+  */
 __asm void INTX_DISABLE(void)
 {
     CPSID   I
     BX      LR
 }
-//开启所有中断
+
+
+/**
+  * @brief  
+  * @param  None
+  * @retval None
+  */
 __asm void INTX_ENABLE(void)
 {
     CPSIE   I
     BX      LR
 }
-//设置栈顶地址
-//addr:栈顶地址
+
+
+/**
+  * @brief  
+  * @param  None
+  * @retval None
+  */
 __asm void MSR_MSP(u32 addr)
 {
     MSR MSP, r0             //set Main Stack value
@@ -28,16 +82,4 @@ __asm void MSR_MSP(u32 addr)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+/******************* (C) COPYRIGHT 2020 *************************END OF FILE***/
